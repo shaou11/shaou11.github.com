@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>路由器加速 | 迷途小书童</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Jack Shao">
+  
+  
+    <meta name="description" content="今天第一天搬到租的房子里，第一次看着好小，今天再细细品味后发现也还好，有桌子有椅子还有张大床再加独立的卫生间，差不多够了。不过最让我兴奋的是有几个难度不大的技术问题可以尝试解决。">
+  
+  <meta name="description" content="今天第一天搬到租的房子里，第一次看着好小，今天再细细品味后发现也还好，有桌子有椅子还有张大床再加独立的卫生间，差不多够了。不过最让我兴奋的是有几个难度不大的技术问题可以尝试解决。">
+<meta name="keywords" content="技术总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路由器加速">
+<meta property="og:url" content="http://yoursite.com/2018/07/23/路由器加速/index.html">
+<meta property="og:site_name" content="迷途小书童">
+<meta property="og:description" content="今天第一天搬到租的房子里，第一次看着好小，今天再细细品味后发现也还好，有桌子有椅子还有张大床再加独立的卫生间，差不多够了。不过最让我兴奋的是有几个难度不大的技术问题可以尝试解决。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-22T13:33:23.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="路由器加速">
+<meta name="twitter:description" content="今天第一天搬到租的房子里，第一次看着好小，今天再细细品味后发现也还好，有桌子有椅子还有张大床再加独立的卫生间，差不多够了。不过最让我兴奋的是有几个难度不大的技术问题可以尝试解决。">
+  
+  
+    <!--<link href="../favicon.ico" rel="shortcut icon" type="image/x-ico">-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">迷途小书童</a></h1>
+    <p><a href="/">——城市中一个迷途小书童</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2018/07/23/路由器加速/">
+  <time datetime="2018-07-23T14:43:41.838Z">
+    2018-07-23
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">路由器加速</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>今天第一天搬到租的房子里，第一次看着好小，今天再细细品味后发现也还好，有桌子有椅子还有张大床再加独立的卫生间，差不多够了。不过最让我兴奋的是有几个难度不大的技术问题可以尝试解决。<br><a id="more"></a></p>
+<hr>
+<p>首先是路由器引出的网线如何再次连接路由器，由于所有路由器IP默认都为192.168.1.1，因此会有IP冲突的问题，修改后即可。同时连接方式改为自动获取IP即可。</p>
+<p>然后是网速的问题，我用网线测速可以到50M带宽，可是路由器测速只有10M带宽，感觉很奇怪，首先找了点资料看看，发现笔记本无线网卡支持802.11 b/g/n协议，路由器支持802.11 b/g协议，也就说说最大速度应该有54M带宽。但是怎么测速达不到，又查阅资料发现，可能是无线信道之间的相互干扰导致，附近租客甚多，wifi信号也特别多，大家都是2.4G频段范围内，的确可能有很大干扰，去路由器设置里换了信道，再测速发现快了很多，可以到20M了，果然是信道干扰惹的祸，虽然没有彻底搞定，不过这个速度对我来说足够了，终于解决了问题的感觉真好。</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/技术总结/">技术总结</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/技术总结/">技术总结</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+
+</article>
+
+
+
+<section id="comment">
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2018/07/23/路由器加速/" data-title="路由器加速" data-url="http://yoursite.com/2018/07/23/路由器加速/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shaou11"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2018 <a href="/">Jack Shao</a>
+  
+</div>
+<div class="theme-copyright">
+
+
+  Power by Hexo
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'shaou11' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+
+
+
+
+</body>
+</html>

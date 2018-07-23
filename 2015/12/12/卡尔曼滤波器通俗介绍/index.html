@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>卡尔曼滤波器通俗讲解 | 迷途小书童</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Jack Shao">
+  
+  
+    <meta name="description" content="卡尔曼滤波器起源1960年，鲁道夫·埃米尔·卡尔曼发表了用递归方法解决离散数据线性滤波问题的论文。但第一个卡尔曼滤波器真正实现者叫斯坦利·施密特，是一名NASA的工程师。当时施密特正在参与后来轰动世界的阿波罗登月计划，在卡尔曼对NASA埃姆斯研究中心的一次访问时，发">
+  
+  <meta name="description" content="卡尔曼滤波器起源1960年，鲁道夫·埃米尔·卡尔曼发表了用递归方法解决离散数据线性滤波问题的论文。但第一个卡尔曼滤波器真正实现者叫斯坦利·施密特，是一名NASA的工程师。当时施密特正在参与后来轰动世界的阿波罗登月计划，在卡尔曼对NASA埃姆斯研究中心的一次访问时，发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="卡尔曼滤波器通俗讲解">
+<meta property="og:url" content="http://yoursite.com/2015/12/12/卡尔曼滤波器通俗介绍/index.html">
+<meta property="og:site_name" content="迷途小书童">
+<meta property="og:description" content="卡尔曼滤波器起源1960年，鲁道夫·埃米尔·卡尔曼发表了用递归方法解决离散数据线性滤波问题的论文。但第一个卡尔曼滤波器真正实现者叫斯坦利·施密特，是一名NASA的工程师。当时施密特正在参与后来轰动世界的阿波罗登月计划，在卡尔曼对NASA埃姆斯研究中心的一次访问时，发">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/photo/1.jpg">
+<meta property="og:image" content="http://yoursite.com/photo/2.jpg">
+<meta property="og:image" content="http://yoursite.com/photo/3.jpg">
+<meta property="og:image" content="http://yoursite.com/photo/4.jpg">
+<meta property="og:image" content="http://yoursite.com/photo/5.jpg">
+<meta property="og:updated_time" content="2018-07-22T13:33:25.027Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="卡尔曼滤波器通俗讲解">
+<meta name="twitter:description" content="卡尔曼滤波器起源1960年，鲁道夫·埃米尔·卡尔曼发表了用递归方法解决离散数据线性滤波问题的论文。但第一个卡尔曼滤波器真正实现者叫斯坦利·施密特，是一名NASA的工程师。当时施密特正在参与后来轰动世界的阿波罗登月计划，在卡尔曼对NASA埃姆斯研究中心的一次访问时，发">
+<meta name="twitter:image" content="http://yoursite.com/photo/1.jpg">
+  
+  
+    <!--<link href="../favicon.ico" rel="shortcut icon" type="image/x-ico">-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">迷途小书童</a></h1>
+    <p><a href="/">——城市中一个迷途小书童</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/12/12/卡尔曼滤波器通俗介绍/">
+  <time datetime="2015-12-12T03:49:57.000Z">
+    2015-12-12
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">卡尔曼滤波器通俗讲解</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <ul>
+<li><p><strong>卡尔曼滤波器起源</strong><br>1960年，鲁道夫·埃米尔·卡尔曼发表了用递归方法解决离散数据线性滤波问题的论文。但第一个卡尔曼滤波器真正实现者叫斯坦利·施密特，是一名NASA的工程师。当时施密特正在参与后来轰动世界的阿波罗登月计划，在卡尔曼对NASA埃姆斯研究中心的一次访问时，发<a id="more"></a>现了他的方法对于阿波罗计划的轨道预测很有用，后来阿波罗飞船的导航电脑便使用了这种滤波器。</p>
+</li>
+<li><p><strong>卡尔曼滤波器通俗讲解</strong><br>下面我们用一个通俗易懂的例子来讲解</p>
+</li>
+</ul>
+<p><img src="/photo/1.jpg" alt=""><br><img src="/photo/2.jpg" alt=""><br><img src="/photo/3.jpg" alt=""><br><img src="/photo/4.jpg" alt=""><br><img src="/photo/5.jpg" alt=""></p>
+<p>如果还有不懂，可以看看下面这个视频，讲解的非常清楚。</p>
+<iframe height="498" width="510" src="http://player.youku.com/embed/XNzQwMTMwOTQ0" frameborder="0" allowfullscreen></iframe>
+
+<p><a href="http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/" target="_blank" rel="noopener">附一篇老外的文章，讲的也非常通俗易懂</a></p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/数学之美/">数学之美</a>
+  </div>
+
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+
+</article>
+
+
+
+<section id="comment">
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/12/12/卡尔曼滤波器通俗介绍/" data-title="卡尔曼滤波器通俗讲解" data-url="http://yoursite.com/2015/12/12/卡尔曼滤波器通俗介绍/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shaou11"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2018 <a href="/">Jack Shao</a>
+  
+</div>
+<div class="theme-copyright">
+
+
+  Power by Hexo
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'shaou11' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+
+
+
+
+</body>
+</html>

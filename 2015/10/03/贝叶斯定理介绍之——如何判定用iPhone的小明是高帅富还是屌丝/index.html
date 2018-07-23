@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝 | 迷途小书童</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Jack Shao">
+  
+  
+    <meta name="description" content="真实的世界并非线性的，比如说你用功学习不一定最终会得高分，努力奋斗不一定能实现梦想，但也并不是完全非线性的，你越努力就越有可能考高分，越奋斗才可能离梦想更近。真实的世界往往充斥着随机，充满着不确定，一切都是一个概率的问题。好了装逼到此结束，下面进入正题。">
+  
+  <meta name="description" content="真实的世界并非线性的，比如说你用功学习不一定最终会得高分，努力奋斗不一定能实现梦想，但也并不是完全非线性的，你越努力就越有可能考高分，越奋斗才可能离梦想更近。真实的世界往往充斥着随机，充满着不确定，一切都是一个概率的问题。好了装逼到此结束，下面进入正题。">
+<meta name="keywords" content="贝叶斯定理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝">
+<meta property="og:url" content="http://yoursite.com/2015/10/03/贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝/index.html">
+<meta property="og:site_name" content="迷途小书童">
+<meta property="og:description" content="真实的世界并非线性的，比如说你用功学习不一定最终会得高分，努力奋斗不一定能实现梦想，但也并不是完全非线性的，你越努力就越有可能考高分，越奋斗才可能离梦想更近。真实的世界往往充斥着随机，充满着不确定，一切都是一个概率的问题。好了装逼到此结束，下面进入正题。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-22T13:33:31.241Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝">
+<meta name="twitter:description" content="真实的世界并非线性的，比如说你用功学习不一定最终会得高分，努力奋斗不一定能实现梦想，但也并不是完全非线性的，你越努力就越有可能考高分，越奋斗才可能离梦想更近。真实的世界往往充斥着随机，充满着不确定，一切都是一个概率的问题。好了装逼到此结束，下面进入正题。">
+  
+  
+    <!--<link href="../favicon.ico" rel="shortcut icon" type="image/x-ico">-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">迷途小书童</a></h1>
+    <p><a href="/">——城市中一个迷途小书童</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/10/03/贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝/">
+  <time datetime="2015-10-03T13:15:10.000Z">
+    2015-10-03
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p><strong>真实的世界并非线性的，比如说你用功学习不一定最终会得高分，努力奋斗不一定能实现梦想，但也并不是完全非线性的，你越努力就越有可能考高分，越奋斗才可能离梦想更近。真实的世界往往充斥着随机，充满着不确定，一切都是一个概率的问题。好了装逼到此结束，下面进入正题。</strong><br><a id="more"></a></p>
+<hr>
+<p>关于贝叶斯定理，首先要讲讲什么是贝叶斯定理。</p>
+<p>在十八世纪的前几十年，许多在给定条件下，求解某一事件发生的概率的问题已经得到了很好地解决。比如说啊：给定6个黑球，4个白球在一个盒子里，伸手去抓一个球出来，抓到黑球的概率是多少？有同学说简单啊，那不就是6/10=0.6么？对呀，是简单，可这才衬托出贝叶斯牛逼呀，他解决的问题是：<strong>知道有10个球在一个盒子里，不知道有多少个黑球，多少个白球，小明伸手去抓，抓了个黑球出来，那盒子里有6个黑球的概率是多少？</strong>当时的人们管第二个问题叫“inverse probability problem”。</p>
+<p>作为对比，我们高中时代所学概率知识的往往是在给定条件下，求发生某一个结果的概率是多少。而贝叶斯研究的问题是：在观察到某种现象之后，隐藏在现象之后的，人们所关心的某个条件成立的概率是多少？总之，贝叶斯在试图推测结果背后的原因。现在有点明白了么？如果还不明白请看下面的例子。</p>
+<p>好了，知道了什么是贝叶斯定理，现在我们就可以用它来估计本文题目中的现实问题了，假设小白某天认识了一个人，姑且叫小明吧（小明，你不介意再躺枪一次吧），小白看见小明用的是苹果手机，想知道小明是高帅富还是屌丝的概率分别是多少？（为了方便，这里假设只有“高帅富”和“屌丝”两种人。）我们先介绍一下条件概率，条件概率讲的是在已知某一个事件A发生的结果情况下，另一个事件B发生的概率，记作P（B|A）。这个不难，比如当盒子里有十个球的时候，事件A为“盒子内有6个黑球”，事件B为“抓到的球是黑球”，那么P（B|A）就是当盒子内有6个黑球，抓到的球是黑球的概率。</p>
+<p>对应上面的例子，小明想知道的就是 P(小明是高帅富|小明用苹果手机)和 P(小明是屌丝|小明用苹果手机),根据贝叶斯定理可以得到：</p>
+<p>$P(小明是高帅富|小明用苹果手机)=$<br>$$ \frac{P(小明用苹果手机|小明是高帅富)\cdot P(小明是高帅富)}{P(小明用苹果手机|小明是高帅富)\cdot P(小明是高帅富)+P(小明用苹果手机|小明是屌丝)\cdot P(小明是屌丝)} $$</p>
+<p>我们可以根据统计结果得到一些已知的概率，再由已知概率算出需要求的概率，由于条件限制我们可以做一些假设。苹果也不是便宜货（不考虑山寨），所以屌丝用的概率不会太高，我们假设P(苹果手机|屌丝)=0.3。另一方面高帅富用苹果手机的概率更大，假设P(苹果手机|高帅富)=0.8。最后，我们还知道，人群中的高富帅要少与屌丝，于是我们假设 P（屌丝）=0.9 而 P（高富帅）=0.1。由此我们可以求得</p>
+<p>$$ P(小明是高帅富|小明用苹果手机)=\frac{0.8\times0.1}{0.8\times0.1 + 0.3\times0.9}\approx 23\% $$</p>
+<p>通过上面的公式我们可以知道：<br>第一，当小白没有看见小明的iPhone时，小明是高帅富的概率是10%，而当他知道了小明用iPhone之后，这个概率就上升到了23%，提高了一倍多。<br>第二，贝叶斯公式的意义就在于，我们可以根据表面观察的现象推出背后现象的概率。</p>
+<hr>
+<p><strong>最后</strong>，如果小明还有其他高帅富的迹象，要推导出高帅富的概率，这个就涉及到联合概率分布了，这里暂不涉及。这个篇文章主要意义还是在于用一种区别于传统教科书的方法来讲解复杂的数学定理，相信看完之后再也不会忘了什么是贝叶斯定理，相反如果还是用整篇的数学公式来讲解，估计大家看到一半就已经睡着了。</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/数学之美/">数学之美</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/贝叶斯定理/">贝叶斯定理</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+
+</article>
+
+
+
+<section id="comment">
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/10/03/贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝/" data-title="贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝" data-url="http://yoursite.com/2015/10/03/贝叶斯定理介绍之——如何判定用iPhone的小明是高帅富还是屌丝/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shaou11"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2018 <a href="/">Jack Shao</a>
+  
+</div>
+<div class="theme-copyright">
+
+
+  Power by Hexo
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'shaou11' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</body>
+</html>

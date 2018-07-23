@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>个人扶墙攻略 | 迷途小书童</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Jack Shao">
+  
+  
+    <meta name="description" content="这是一篇个人扶墙的总结，记录了这一年自己的一点扶墙经验。我的VPS是搬瓦工的，VPS架构为OpenVZ。关于本地shadowsock的配置不在详细叙述，网上很多。主要讲讲手机的配置和如何利用finalspeed给搬瓦工加速。">
+  
+  <meta name="description" content="这是一篇个人扶墙的总结，记录了这一年自己的一点扶墙经验。我的VPS是搬瓦工的，VPS架构为OpenVZ。关于本地shadowsock的配置不在详细叙述，网上很多。主要讲讲手机的配置和如何利用finalspeed给搬瓦工加速。">
+<meta name="keywords" content="技术总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人扶墙攻略">
+<meta property="og:url" content="http://yoursite.com/2016/02/12/扶墙攻略/index.html">
+<meta property="og:site_name" content="迷途小书童">
+<meta property="og:description" content="这是一篇个人扶墙的总结，记录了这一年自己的一点扶墙经验。我的VPS是搬瓦工的，VPS架构为OpenVZ。关于本地shadowsock的配置不在详细叙述，网上很多。主要讲讲手机的配置和如何利用finalspeed给搬瓦工加速。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-22T13:33:28.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人扶墙攻略">
+<meta name="twitter:description" content="这是一篇个人扶墙的总结，记录了这一年自己的一点扶墙经验。我的VPS是搬瓦工的，VPS架构为OpenVZ。关于本地shadowsock的配置不在详细叙述，网上很多。主要讲讲手机的配置和如何利用finalspeed给搬瓦工加速。">
+  
+  
+    <!--<link href="../favicon.ico" rel="shortcut icon" type="image/x-ico">-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">迷途小书童</a></h1>
+    <p><a href="/">——城市中一个迷途小书童</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/02/12/扶墙攻略/">
+  <time datetime="2016-02-12T10:48:22.000Z">
+    2016-02-12
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">个人扶墙攻略</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>这是一篇个人扶墙的总结，记录了这一年自己的一点扶墙经验。我的VPS是搬瓦工的，VPS架构为OpenVZ。关于本地shadowsock的配置不在详细叙述，网上很多。主要讲讲手机的配置和如何利用finalspeed给搬瓦工加速。<br><a id="more"></a></p>
+<hr>
+<p>文章主要一下几部分：</p>
+<blockquote>
+<ul>
+<li>IOS9上surge配置</li>
+<li>利用finalspeed给SS加速</li>
+<li>利用SS给网游加速</li>
+</ul>
+</blockquote>
+<h2 id="IOS9上surge配置"><a href="#IOS9上surge配置" class="headerlink" title="IOS9上surge配置"></a>IOS9上surge配置</h2><p>surge是IOS9上网络代理的一款软件，能将所有流量转发到VPS站点然后再传回，正版很贵，穷学生买不起，所以只能去苹果助手下了个，以后有钱了会多多支持正版。首先surge需要一个配置文件，可以在网上下一个别人写好的，然后修改VPS的信息就可以连上了。</p>
+<p><a href="http://www.jianshu.com/p/b4746a29d3fc" target="_blank" rel="noopener">附一篇不错的文章</a></p>
+<hr>
+<h2 id="利用finalspeed给SS加速"><a href="#利用finalspeed给SS加速" class="headerlink" title="利用finalspeed给SS加速"></a>利用finalspeed给SS加速</h2><p>FinalSpeed是高速双边加速软件,可加速所有基于tcp协议的网络服务,在高丢包和高延迟环境下,仍可达到90%的物理带宽利用率,即使高峰时段也能轻松跑满带宽。</p>
+<p>具体步骤是<br>1 VPS服务端配置<br>2 客户端配置<br>3 SS配置</p>
+<p>最后，说一说个人的感觉，装完以后看YouTube的确快了很多，720P还是可以的，但没有网上说的4K无压力那么夸张，也可能和我用的移动宽带有关系，毕竟便宜，在某些方面不如电信也是正常，不过对我来说已经够用。顺便说一下最近找了个破解版的迅游加速器，玩电信服的网游延迟也好了很多。</p>
+<p><a href="https://blog.kuoruan.com/82.html" target="_blank" rel="noopener">附一篇教程</a></p>
+<hr>
+<h2 id="利用SS给网游加速"><a href="#利用SS给网游加速" class="headerlink" title="利用SS给网游加速"></a>利用SS给网游加速</h2><p>因为很多网游是P2P模式的，需要UDP的加速，但是貌似SS暂时只支持TCP的转发而且只有http协议的数据可以转发，也就是说PC端只有网页数据可以代理，即使在路由器端开SS的全局模式依然难以对网游加速。如果要在PC端加速网游，貌似还需要装一个ProxyCap软件，下次有空试试。</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/技术总结/">技术总结</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/技术总结/">技术总结</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+
+</article>
+
+
+
+<section id="comment">
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/02/12/扶墙攻略/" data-title="个人扶墙攻略" data-url="http://yoursite.com/2016/02/12/扶墙攻略/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shaou11"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2018 <a href="/">Jack Shao</a>
+  
+</div>
+<div class="theme-copyright">
+
+
+  Power by Hexo
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'shaou11' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+
+
+
+
+</body>
+</html>

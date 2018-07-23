@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>MATLAB基础——个人总结 | 迷途小书童</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Jack Shao">
+  
+  
+    <meta name="description" content="清空close all;clc;clear;
+
+grid onones(size(t))">
+  
+  <meta name="description" content="清空close all;clc;clear;  grid onones(size(t))">
+<meta name="keywords" content="编程之美">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB基础——个人总结">
+<meta property="og:url" content="http://yoursite.com/2016/01/01/MATLAB基础/index.html">
+<meta property="og:site_name" content="迷途小书童">
+<meta property="og:description" content="清空close all;clc;clear;  grid onones(size(t))">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-22T13:33:31.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MATLAB基础——个人总结">
+<meta name="twitter:description" content="清空close all;clc;clear;  grid onones(size(t))">
+  
+  
+    <!--<link href="../favicon.ico" rel="shortcut icon" type="image/x-ico">-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">迷途小书童</a></h1>
+    <p><a href="/">——城市中一个迷途小书童</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/01/01/MATLAB基础/">
+  <time datetime="2016-01-01T10:53:18.000Z">
+    2016-01-01
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">MATLAB基础——个人总结</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <ul>
+<li><p>清空<br><code>close all;clc;clear;</code></p>
+</li>
+<li><p>grid on<br>ones(size(t))</p>
+<a id="more"></a>
+<blockquote>
+<p>t = linspace(0, 2*pi, 100);<br>x = cos(t);<br>y = sin(t);<br>z = ones(size(t));      %表示生成一个和t矩阵一样的所以元素都为1的矩阵<br>plot3(x, y, z)<br>grid on                  %表示在坐标轴上画满网格 </p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid on 等同于</span><br><span class="line"><span class="keyword">set</span>(gca,<span class="string">'xgrid'</span>,<span class="string">'on'</span>,<span class="string">'GridLineStyle'</span>,<span class="string">'-'</span>);</span><br><span class="line"><span class="keyword">set</span>(gca,<span class="string">'ygrid'</span>,<span class="string">'on'</span>,<span class="string">'GridLineStyle'</span>,<span class="string">'-'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>坐标轴范围，标刻度</p>
+<blockquote>
+<p>axis([0 2<em>pi -5 5]);<br>set(gca,’xTick’,[0 0.5</em>pi pi 1.5<em>pi 2</em>pi 2.5<em>pi 3</em>pi 3.5<em>pi]);       % 将x轴刻度分为8个点，间隔pi/2<br>set(gca,’xTickLabel’,{‘0’ ‘0.5</em>pi’ ‘pi’ ‘1.5<em>pi’ ‘2</em>pi’ ‘2.5*pi’ ‘g’ ‘3.5pi’});         % 给刚才的间隔标个数值</p>
+</blockquote>
+</li>
+<li><p>画一部分曲线</p>
+<blockquote>
+<p>plot(x(1:n<em>0.5</em>pi/0.01),z(1:n<em>0.5</em>pi/0.01));    %表示第1个数值画到第50<em>pi个点，因为50</em>pi以后表示的就是虚数了</p>
+</blockquote>
+</li>
+<li><p>画直线</p>
+<blockquote>
+<p>plot([0 2*pi],[0,0],’r’)</p>
+</blockquote>
+</li>
+<li><p>坐标轴标签</p>
+<blockquote>
+<p>title(‘’);<br>xlabel(‘’);<br>ylabel(‘’);</p>
+</blockquote>
+</li>
+<li><p>图例</p>
+<blockquote>
+<p>legend(‘cp’,’cg’)</p>
+</blockquote>
+</li>
+<li><p>矩阵变换<br>···<br>B=A(end:-1:1,:)<br>%表示将A的行的顺序从尾到头排列构成B，也就是B的第一行对应A的最后一行，第二行对应A的倒数第二行，以此类推。<br>···</p>
+</li>
+</ul>
+<h2 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h2><ul>
+<li><p>find(abs(b)&lt;0.02)     %找曲线交点</p>
+</li>
+<li><p>zeros( )             %生成一个全为0的矩阵</p>
+<blockquote>
+<p>p=zeros(1,101);P=zeros(1,101);<br>for z=0:12<br>  p(z+1)=-1i<em>sqrt(2</em>pi/(k1<em>r))</em>A1^2<em>sin(kz1</em>z0)<em>sin(kz1</em>z)-1i<em>sqrt(2</em>pi/(k2<em>r))</em>A1^2<em>sin(kz2</em>z0)<em>sin(kz2</em>z);<br>  P(z+1)=abs(p(z+1));<br>end</p>
+</blockquote>
+</li>
+<li></li>
+</ul>
+<h2 id="要注意的地方："><a href="#要注意的地方：" class="headerlink" title="要注意的地方："></a>要注意的地方：</h2><ul>
+<li>三角函数里的值只能用弧度制表示才能带入计算，如sin(pi/2),cos(pi/6)；若画图中坐标要用角度制表示则应该乘以180/pi做换算</li>
+</ul>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/编程之美/">编程之美</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/编程之美/">编程之美</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+
+</article>
+
+
+
+<section id="comment">
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/01/01/MATLAB基础/" data-title="MATLAB基础——个人总结" data-url="http://yoursite.com/2016/01/01/MATLAB基础/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shaou11"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2018 <a href="/">Jack Shao</a>
+  
+</div>
+<div class="theme-copyright">
+
+
+  Power by Hexo
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'shaou11' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+
+
+
+
+</body>
+</html>

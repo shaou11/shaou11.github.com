@@ -1,0 +1,13 @@
+1 去掉图片下方的figure1，figure2
+
+2 首行缩进
+
+3 中文
+
+4 打偏导数
+
+5 article和report的结构不同，显示section的方式也不同
+
+5 section*不显示前面的数字
+
+6 \cdots打公式时这种符号后面要空格

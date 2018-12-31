@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>近期数据处理MATLAB小结 | 迷途小书童</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Jack Shao">
+  
+  
+    <meta name="description" content="近期在处理一部分海试数据，由于第一次处理实际数据，在使用MATLAB过程中发现了一些问题，预计以后有些问题会经常碰到，在此做一个小小的记录，留着以后看。">
+  
+  <meta name="description" content="近期在处理一部分海试数据，由于第一次处理实际数据，在使用MATLAB过程中发现了一些问题，预计以后有些问题会经常碰到，在此做一个小小的记录，留着以后看。">
+<meta name="keywords" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="近期数据处理MATLAB小结">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/近期数据处理MATLAB小结/index.html">
+<meta property="og:site_name" content="迷途小书童">
+<meta property="og:description" content="近期在处理一部分海试数据，由于第一次处理实际数据，在使用MATLAB过程中发现了一些问题，预计以后有些问题会经常碰到，在此做一个小小的记录，留着以后看。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-31T11:42:20.162Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="近期数据处理MATLAB小结">
+<meta name="twitter:description" content="近期在处理一部分海试数据，由于第一次处理实际数据，在使用MATLAB过程中发现了一些问题，预计以后有些问题会经常碰到，在此做一个小小的记录，留着以后看。">
+  
+  
+    <!--<link href="../favicon.ico" rel="shortcut icon" type="image/x-ico">-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+</html>
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">迷途小书童</a></h1>
+    <p><a href="/">——城市中一个迷途小书童</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2018/05/20/近期数据处理MATLAB小结/">
+  <time datetime="2018-05-20T08:36:09.000Z">
+    2018-05-20
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">近期数据处理MATLAB小结</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>近期在处理一部分海试数据，由于第一次处理实际数据，在使用MATLAB过程中发现了一些问题，预计以后有些问题会经常碰到，在此做一个小小的记录，留着以后看。<br><a id="more"></a><br>1 读取excel特定表<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">xlsread</span><span class="params">(<span class="string">'xxx.xls'</span>,<span class="string">'sheetname'</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>2 读取excel中的时间数据，首先将excel时间转化为数字格式，然后xlsread()函数读取，最后通过datestr()函数转换<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">xlsread</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">datestr</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>3 importdata,load,import等函数的区别</p>
+<p>4 dir()函数列出所有文件或文件夹</p>
+<p>5 对于一个结构体读取一部分数据<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">getfield</span><span class="params">(a,<span class="string">'RBR'</span>,<span class="string">'data'</span>)</span></span></span><br><span class="line"></span><br><span class="line"><span class="number">6</span> 关于 () [] &#123;&#125; 的区别，()主要函数用，[]可以连接字符串，例如</span><br></pre></td></tr></table></figure></p>
+<p>path1=’D:\’;<br>path2=’program’<br>path=[path1, path2]<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;针对于<span class="selector-tag">cell</span>形式，</span><br></pre></td></tr></table></figure></p>
+<p>a = cell(1,2);<br>a = {‘你好’, [1,2,3]}<br><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="symbol">7 </span>cell类型的变量赋值必须要用&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>filename=cell(1,3)<br>filename={‘xx’, ‘xx’, ‘xx’};<br><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="symbol">8 </span>假设filename为cell类型，注意区别filename(i)和filename&#123;i&#125;，前者为cell类型变量，后者为字符串型变量</span><br></pre></td></tr></table></figure></p>
+<p>load( char(filename(i)) );<br>load( filename{i} )<br><code>`</code></p>
+<p>9 fread,fseek,fprintf等读写文件的方法要注意</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/总结/">总结</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/总结/">总结</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+
+</article>
+
+
+
+<section id="comment">
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2018/05/20/近期数据处理MATLAB小结/" data-title="近期数据处理MATLAB小结" data-url="http://yoursite.com/2018/05/20/近期数据处理MATLAB小结/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shaou11"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2018 <a href="/">Jack Shao</a>
+  
+</div>
+<div class="theme-copyright">
+
+
+  Power by Hexo
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'shaou11' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+
+
+
+
+
+</body>
+</html>

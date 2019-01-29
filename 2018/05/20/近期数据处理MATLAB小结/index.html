@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="迷途小书童">
 <meta property="og:description" content="近期在处理一部分海试数据，由于第一次处理实际数据，在使用MATLAB过程中发现了一些问题，预计以后有些问题会经常碰到，在此做一个小小的记录，留着以后看。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-31T15:17:42.402Z">
+<meta property="og:updated_time" content="2019-01-29T10:28:36.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期数据处理MATLAB小结">
 <meta name="twitter:description" content="近期在处理一部分海试数据，由于第一次处理实际数据，在使用MATLAB过程中发现了一些问题，预计以后有些问题会经常碰到，在此做一个小小的记录，留着以后看。">
@@ -82,7 +82,7 @@
 <p>5 对于一个结构体读取一部分数据<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">getfield</span><span class="params">(a,<span class="string">'RBR'</span>,<span class="string">'data'</span>)</span></span></span><br></pre></td></tr></table></figure></p>
 <p>6 关于 () [] {} 的区别，()主要函数用，[]可以连接字符串，例如<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path1='D:\';</span><br><span class="line">path2='program'</span><br><span class="line">path=[path1, path2]</span><br></pre></td></tr></table></figure></p>
 <p>{}针对于cell形式，<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">a</span> = cell(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"><span class="attr">a</span> = &#123;<span class="string">'你好'</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125;</span><br></pre></td></tr></table></figure></p>
-<p>7 cell类型的变量赋值必须要用{}<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">filename</span>=cell(<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="attr">filename</span>=&#123;<span class="string">'xx'</span>, <span class="string">'xx'</span>, <span class="string">'xx'</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>7 cell类型的变量存取使用{}<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">filename</span> = cell(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">filename</span> = &#123;<span class="string">'xx'</span>, <span class="string">'xx'</span>, <span class="string">'xx'</span>&#125;;</span><br><span class="line"><span class="keyword">filename</span>&#123;<span class="number">1</span>&#125; = <span class="string">'xx'</span></span><br></pre></td></tr></table></figure></p>
 <p>8 假设filename为cell类型，注意区别filename(i)和filename{i}，前者为cell类型变量，后者为字符串型变量<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">load( <span class="name">char</span>(<span class="name">filename</span>(<span class="name">i</span>)) )<span class="comment">;</span></span><br><span class="line">load( <span class="name">filename</span>&#123;i&#125; )</span><br></pre></td></tr></table></figure></p>
 <p>9 fread,fseek,fprintf等读写文件的方法要注意</p>
 
@@ -132,7 +132,7 @@ var duoshuoQuery = {short_name:"shaou11"};
   </div>
   <footer id="footer"><div class="copyright">
   
-  &copy; 2018 <a href="/">Jack Shao</a>
+  &copy; 2019 <a href="/">Jack Shao</a>
   
 </div>
 <div class="theme-copyright">
